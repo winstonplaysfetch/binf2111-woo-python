@@ -1,0 +1,36 @@
+// Step 1: Get data from SRA (Use SRA-Toolkit on your computer to actually download the files)
+fastq-dump SRR1763780
+
+// Step 2: Visualize in FASTQC
+http://www.bioinformatics.babraham.ac.uk/p rojects/fastqc/
+
+// Step 3: Clip TrP1 adapter (Ion Torrent sequencing uses an adapter called TrP1.)
+//This adapter is specific to this sequencing platform and version, so you wouldn’t trim this from Illumina data
+fastx_clipper -v -Q33 -a CCTCTCTATGGGCAGTCGGTGAT -i BC30.fastq -o BC30.clipTrP1.fastq
+
+//Step 4 trim for length
+fastx_trimmer -v -Q33 -f 9 -l 289 -i BC30.clipTrP1.fastq -o BC30.trim.fastq
+
+//Step 5a filter for quality
+fastq_quality_filter -v -Q33 -q 20 -p 50 -i BC30.trim.fastq -o BC30.qualfilt.fastq
+
+//Step 5b trim for quality
+fastq_quality_trimmer -v -Q33 -t 20 -l 50 -i BC30.qualfilt.fastq -o BC30.qualtrim.fastq
+
+//Step 6 build a Bowtie index
+bowtie-build NC_007898.fasta NC_007898
+
+//Step 7 make a Bowtie alignment
+bowtie -S NC_007898 BC30.qualfilt.fastq BC30.sam
+
+//Step 8 display SAM in IGV
+samtools view -ub BC30.sam > BC30.bam
+samtools sort BC30.bam -o BC30.sort.bam // converts readable SAM to binary SAM
+samtools index BC30.sort.bam // sorts reads in BAM by position in reference
+
+//Once inside the IGV menu:
+//Open NC_007898 from the Genomes menu.
+// Then open your sorted BAM from the File menu.
+// Then open NC_007898.gff from the File menu
+
+//Turn in commands + screenshot of view in IGV

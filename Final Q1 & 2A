@@ -1,0 +1,14 @@
+1: 
+What happens to the data attribute when you use the method my_seq.reverse_complement()? What happens to the alphabet attribute?
+
+	-Biopython has the reverse_compliment method to return the compliment 	value (A replaced with T, C with G and vice versa) in a reversed 	sequence. This method returns the changed string, plus the same original alphabet. 
+
+What if you use the method my_seq.translate(to_stop=True)? What will happen (how is it transformed, not the exact result) to the sequence? What happens to the alphabet attribute?
+	-This line will make Biopython translate the sequence, and stop when there is a stop codon. The alphabet will remain the same. 
+
+2A
+What keyword would you have to change in the function to convert it into a generator?
+	- Change "return" to "yield" to convert a function to a generator. 
+
+Does it make sense to create a generator that makes just one single value? What is the special property of a generator that lets you call it from a for loop, for example:
+	- It does not make sense to create a generator that yields only one value. Generators are best used as an iterator, to step through a function and return one value each step. 

@@ -1,0 +1,5 @@
+one	word	in	a	file
+two	words	in	a	cup
+three	cats	in	a	hat
+four	cups	in	a	row
+five	rows	in	a	file

@@ -1,0 +1,14 @@
+On IOS the PATH should be:
+/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+
+In the event that PATH gets erased, To set it back to default: 
+PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+
+
+harmless.txt contents:
+export PATH='*/scripts:$PATH'
+
+save as .bash_profile, in home directory:
+cp harmless.txt .bash_profile
+
+
