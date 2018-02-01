@@ -1,0 +1,63 @@
+Table of scripts:
+dna_to_rna_jdaly.py - Submit your script for getting sequence input from the user, calculating and printing the length, calculating and printing the number of "T" characters, and converting the Ts to Us.
+
+newgcscript.py - Submit your script for the GC content example we went through in class. 
+reverseDNA.py - Work out a solution for how to create and print the reverse complement of a user-inputted DNA sequence.
+
+openandclose.py - Turn in your Open and Close script that does all of the stuff outlined in openandcloseoutline.py
+
+gcfromfasta.py - Write a script that builds upon our GC counting script from last week.The script should open a FASTA file and read each line, contain a simple conditional so that GC is only counted for sequences and not header lines, compute GC for each sequence, and write a new output file that contains the results of the calculation.Use the new line.split and line.startswith string methods shown in class today to retrieve an identifying piece of information from the header line to identify each GC result.
+
+sequenceconditionals-1.py - Write a script that evaluates an individual sequence to see if it should be kept or discarded:
+
+joinintfasta2.py - Write a script that parses through a multi-sequence FASTA file and joins the sequence lines into continuous sequences.
+
+trimmingsequences.py - Merge your process for FASTA file joining and your process for screening sequences together to get a script that will filter all of the sequences in a file.
+
+restriction_fragments.py - Write a script that predicts restriction fragments in the attached file, following the outline given in class. Challenge: look at how PstI actually cuts, and modify the script to reflect the actual top strand cut site and not the beginning of the pattern (https://en.wikipedia.org/wiki/PstI) Challenge: print each sequence into 80 char lines with newlines instead of one big blob
+
+23andmeblueeyes.py - Your mission for today is to write a script that checks a 23 and Me genotype file for several groups of SNPs that are associated with blue eyes. The SNPs in question are in the file “blueeyepanel.txt” in the Dropbox. The format of the file is “genotype, SNP, haplotype block”. Genotype is the derived genotype common in people with the blue eye variant discussed in the last post. SNP is the SNP identifier. Haplotype block is the code name for a multi-SNP pattern associated with blue eyes. 
+
+gccountfunction.py - make your GC content calculator into a function and call it, then use the returned value for something
+
+joinfunction.py - make your multi-FASTA join code into a function and call it, then use the returned value
+
+retrictionfrags_function.py - Your restriction fragment predictor script from last week, converting your previous code to use at minimum a function for the FASTA joining and call to that function. If you are finding this easy to understand, challenge yourself to find other elements in that script to convert into reusable functions.
+
+windowsscript.py - the short sliding window script that we did this morning, converting the example code in the slides to use a function and a function cal
+
+trinucleotidecount.py - Submit the script that creates a dictionary of trinucleotide counts from class. 
+
+DNATranslationDict.py - This week's assignment is to convert the bacterial file into a Python dictionary that you can then use to translate nucleic acid sequence into protein sequence.
+
+LotteryGenerator.py - 1) Lottery winning number generator (with caller)
+
+Fibanoccigen.py - 2) Fibonacci infinite series generator (with caller that restricts scope of results)
+
+fastaparser.py - Convert your FASTA parser to use a generator with a yield statement. Use a simple generator call to return a limited number of results.
+
+fastq_parser.py - Implement the FASTQ parser following the example code in the slides. Again, use a simple generator call with a break to return a few of the lines you parse out.
+
+reverse_sequence_comp.py - Create a script that performs complementation, reversal and reverse complementation of a sequence, using dict and list comprehensions and the "reversed" built in function.
+
+fastqfiltering.zip - Make a script that filters FASTQ sequences, using a length filter and a sliding window quality filter.
+
+pipeline.txt - For today's assignment, create a file that contains the commands you use to run fastx/bowtie/samtools to clean sequences, align them to a reference, and identify variants.
+
+CommandLinePractice-1.py - Upload scripts showing your use of sys.argv, getopt and argparse
+
+subprocessExample.py - Turn in your script that uses subprocess.call to run UNIX commands, from Rachel's lesson.
+
+popen_subprocesses.py, popen_subprocesses2.py - Submit the two in-class scripts using subprocess.Popen with the UNIX cut command
+
+popen_pipeline.py - Use subprocess.Popen to make a script that connects the first 3 fastx/fastq data cleaning commands
+
+Biopython_readfasta-1.py - Convert your FASTA reader so that it yields Biopython Seq objects instead of strings and uses Biopython's methods to translate them and calculate attributes.
+
+vcparsetrans.py - In this assignment you will need three input files, the genomic FASTA file, a VCF file with gene variants, and a GFF file that contains annotations of where coding regions are.
+
+Example1, 2, 3, 4.py - ExampleProblems-F2016.pptx
+
+regular_express.py - Submit the In-class Practice script using regular expressions to parse a large fasta file. Show use of both the re.search and re.sub commands.
+
+Final Question2, 3, 4.py - FinalExam-F2016.pptx
